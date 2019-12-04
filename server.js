@@ -7,7 +7,27 @@ mongo.connect(
   (err, database) => {
     if (err) console.log(err);
     else {
-      console.log('listening on 9090 ... and stuff and ting');
+      console.log('listening on 9090 ...');
+
+      const seedDb = database.collection('messages');
+      seedDb.insert({
+        username: 'testUN',
+        msg: 'testhelloMSG',
+        timeStamp: new Date.now(),
+        avatarUrl: 'www.testurl.com'
+      });
+      client.on('connection', socket => {
+        let dbMessages = database.collection('messages');
+
+        dbMessages
+          .find()
+          .limit(10)
+          .sort({ timeStamp })
+          .toArray((err, res) => {
+            if (err) console.log(err);
+            socket.emit('output', res);
+          });
+      });
     }
   }
 );
