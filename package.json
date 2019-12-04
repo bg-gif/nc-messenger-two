@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bg-gif/nc-messenger-two/issues"
   },
-  "homepage": "https://github.com/bg-gif/nc-messenger-two#readme"
+  "homepage": "https://github.com/bg-gif/nc-messenger-two#readme",
+  "dependencies": {
+    "react": "^16.12.0"
+  }
 }
