@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/bg-gif/nc-messenger-two#readme",
   "dependencies": {
+
     "mongodb": "^3.3.5",
     "nodemon": "^2.0.1",
     "socket.io": "^2.3.0"
+    "react": "^16.12.0"
+
   }
 }
